@@ -25,6 +25,7 @@ fi
 FILE=$1
 NAME=$(echo "$FILE" | sed -e 's|.*/||g' | sed -e 's|\.[^\.]*\.tar\.gz||g')
 
+mkdir -p /usr/local/stow
 rm -rf /usr/local/stow/$NAME
 tar xf "$FILE" -C /usr/local/stow
 ( cd /usr/local/stow ; stow -R $NAME )
