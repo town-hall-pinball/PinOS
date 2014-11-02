@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+PROG=$(basename "$0")
+
+if [ "$(id -u)" != "0" ] ; then
+    echo "$PROG: Must run as root" 2>&1
+    exit 1
+fi
+
+usage() {
+cat <<EOF
+Usage: $PROG <tarball>
+
+Unpacks the <tarball> to /usr/local/stow and installs
+EOF
+}
+
+if [ "$#" -ne 1 ] ; then
+    usage
+    exit 1
+fi
+
+FILE=$1
+NAME=$(echo "$FILE" | sed -e 's|.*/||g' | sed -e 's|\.[^\.]*\.tar\.gz||g')
+
+rm -rf /usr/local/stow/$NAME
+tar xf "$FILE" -C /usr/local/stow
+( cd /usr/local/stow ; stow -R $NAME )
+ldconfig
+

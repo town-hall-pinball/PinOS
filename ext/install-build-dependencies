@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+sudo apt-get update
+sudo apt-get install -y \
+	cmake \
+	curl \
+	g++ \
+	git \
+	libboost-dev \
+	libyaml-dev \
+	make \
+	python-dev \
+	python-imaging \
+	python-setuptools \
+	python-yaml \
+	swig
+
