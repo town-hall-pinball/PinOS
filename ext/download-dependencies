@@ -9,7 +9,7 @@ cd $(dirname "$0")
 mkdir -p dist
 for dep in $DEPS; do
     rm -f dist/$dep.tar.gz
-    ( cd dist ; curl -O http://blackchip.org/town-hall-pinball/$dep.tar.gz )
+    ( cd dist ; curl -O http://blackchip.org/town-hall-pinball/$dep.$(arch).tar.gz )
 done
 
 
