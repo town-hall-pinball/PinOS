@@ -14,4 +14,3 @@ make -f libpinproc.mk
 sudo ./local-stow dist/libpinproc*
 make -f pypinproc.mk
 sudo ./local-stow dist/pypinproc*
-
