@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+DEPS="libftdi-0.16 libpinproc libusb-0.1.12 pypinproc yaml-cpp-0.3.0"
+
+cd $(dirname "$0")
+
+mkdir -p dist
+for dep in $DEPS; do
+    rm -f dist/$dep.tar.gz
+    ( cd dist ; curl -O http://blackchip.org/town-hall-pinball/$dep.tar.gz )
+done
+
+

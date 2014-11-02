@@ -17,9 +17,10 @@ init:
 buildclean:
 	rm -rf $(BUILD)/$(NAME)
 	rm -rf $(BUILDROOT)/$(NAME)
-	rm -rf $(DIST)/$(NAME)*
 
 clean: buildclean
+	rm -f $(DIST)/$(NAME)
+
 
 
 

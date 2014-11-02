@@ -24,8 +24,3 @@ apt-get install -y \
 	python-yaml \
         stow \
 	swig
-if [ "$(arch)" == "x86_64" ] ; then
-    apt-get install -y python-pygame
-    apt-get install -y python-tk
-fi
-
