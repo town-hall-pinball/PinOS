@@ -1,0 +1,46 @@
+#!/bin/bash
+
+set -e
+
+PROG=$(basename "$0")
+cd $(dirname "$0")
+
+if [ "$(id -u)" != "0" ] ; then
+    echo "$PROG: Must run as root" 2>&1
+    exit 1
+fi
+
+apt-get update
+apt-get install -y \
+	alsa-utils \
+	curl \
+	dos2unix \
+	libboost-dev \
+	python \
+	python-imaging \
+        stow
+
+if [ "$(arch)" == "x86_64" ] ; then
+    apt-get install -y \
+	python-pygame \
+    	python-tk
+fi
+
+PACKAGES=$(dir dist/*.tar.gz)
+for package in $PACAKGES; do
+    ./local-stow $package
+done
+
+ldconfig
+
+if [ $(arch) == "x86_64" ] ; then
+    amixer -c 0 -- sset Master 100% unmute
+fi
+amixer -c 0 -- sset PCM 100% unmute
+
+if getent passwd vagrant >/dev/null ; then
+    usermod -a -G audio vagrant
+fi
+
+
+

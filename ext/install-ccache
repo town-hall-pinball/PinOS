@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+PROG=$(basename "$0")
+
+if [ "$(id -u)" != "0" ] ; then
+    echo "$PROG: Must run as root" 2>&1
+    exit 1
+fi
+
+apt-get update
+apt-get install -y stow ccache
+mkdir -p /usr/local/stow/ccache/bin
+for exe in gcc g++ cc c++; do
+    ln -s /usr/bin/ccache /usr/local/stow/ccache/bin/${exe}
+done
+( cd /usr/local/stow ; stow -R ccache )
+

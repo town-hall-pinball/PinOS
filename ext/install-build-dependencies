@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e
+
+PROG=$(basename "$0")
+
+if [ "$(id -u)" != "0" ] ; then
+    echo "$PROG: Must run as root" 2>&1
+    exit 1
+fi
+
+apt-get update
+apt-get install -y \
+	cmake \
+	curl \
+	g++ \
+	git \
+	libboost-dev \
+	libyaml-dev \
+	make \
+	python-dev \
+	python-imaging \
+	python-setuptools \
+	python-yaml \
+        stow \
+	swig
