@@ -46,8 +46,9 @@ if [ "$(arch)" == "x86_64" ] ; then
     	python-tk
 fi
 
-PACKAGES=$(dir dist/*.tar.gz)
-for package in $PACAKGES; do
+PACKAGES=$(ls dist/*.tar.gz)
+for package in $PACKAGES; do
+    echo "Installing $package"
     ./local-stow $package
 done
 
