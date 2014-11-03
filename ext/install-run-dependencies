@@ -52,7 +52,7 @@ for package in $PACKAGES; do
     ./local-stow $package
 done
 install -m 755 ../bin/pingame /usr/local/bin/pingame
-
+dos2unix /usr/local/bin/pingame
 ldconfig
 
 if [ $(arch) == "x86_64" ] ; then
