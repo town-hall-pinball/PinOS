@@ -51,6 +51,7 @@ for package in $PACKAGES; do
     echo "Installing $package"
     ./local-stow $package
 done
+install -m 755 ../bin/pingame /usr/local/bin/pingame
 
 ldconfig
 
