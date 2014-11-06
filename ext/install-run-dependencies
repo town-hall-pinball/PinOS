@@ -39,12 +39,9 @@ apt-get install -y \
 	python \
 	python-imaging \
         stow
-
-if [ "$(arch)" == "x86_64" ] ; then
-    apt-get install -y \
-	python-pygame \
-    	python-tk
-fi
+pip install \
+     cherrypy \
+     ws4py
 
 PACKAGES=$(ls dist/*.tar.gz)
 for package in $PACKAGES; do
