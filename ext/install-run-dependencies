@@ -38,7 +38,8 @@ apt-get install -y \
 	libboost-dev \
 	python \
 	python-imaging \
-        stow
+    python-pip \
+    stow
 pip install \
      cherrypy \
      ws4py
