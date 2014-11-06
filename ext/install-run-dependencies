@@ -44,6 +44,10 @@ pip install \
      cherrypy \
      ws4py
 
+if [ $(arch) == "x86_64" ] ; then
+    apt-get install -y python-pygame
+fi
+
 PACKAGES=$(ls dist/*.tar.gz)
 for package in $PACKAGES; do
     echo "Installing $package"
