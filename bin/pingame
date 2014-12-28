@@ -25,11 +25,7 @@ set -e
 . /etc/default/pingame
 
 cd $DIR
-if [ "$1" == "--machine" ] ; then
-    ARGS="--proc"
-else
-    if [ -z "$DISPLAY" ] ; then
-       export DISPLAY=$(ip route show default | head -1 | awk '{print $3}'):0
-    fi
+if [ -z "$DISPLAY" ] ; then
+    export DISPLAY=$(ip route show default | head -1 | awk '{print $3}'):0
 fi
-python -m $MODULE $ARGS
+python -m $MODULE "$@"
