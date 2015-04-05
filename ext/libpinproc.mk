@@ -26,7 +26,7 @@ NAME=libpinproc
 download: $(DOWNLOAD)/$(NAME)
 
 $(DOWNLOAD)/$(NAME):
-	( cd $(DOWNLOAD) ; git clone --depth 1 https://github.com/preble/libpinproc.git )
+	( cd $(DOWNLOAD) ; git clone --depth 1 https://github.com/tomlogic/libpinproc.git )
 
 compile: download $(DIST)/$(NAME).$(ARCH).tar.gz
 
