@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2014 townhallpinball.org
+# Copyright (c) 2014 - 2015 townhallpinball.org
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
@@ -28,4 +28,5 @@ cd $DIR
 if [ -z "$DISPLAY" ] ; then
     export DISPLAY=$(ip route show default | head -1 | awk '{print $3}'):0
 fi
-python -m $MODULE "$@"
+( cd /opt/mpf ; exec python mpf.py "$@" $GAME )
+
