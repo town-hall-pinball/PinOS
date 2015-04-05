@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2014 townhallpinball.org
+# Copyright (c) 2014 - 2015 townhallpinball.org
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
@@ -32,21 +32,19 @@ fi
 
 apt-get update
 apt-get install -y \
-	alsa-utils \
+    alsa-utils \
 	curl \
 	dos2unix \
 	libboost-dev \
 	python \
 	python-imaging \
     python-pip \
+    python-pygame \
+    python-yaml \
     stow
 pip install \
-     cherrypy \
-     ws4py
-
-if [ $(arch) == "x86_64" ] ; then
-    apt-get install -y python-pygame
-fi
+    cherrypy \
+    ws4py
 
 PACKAGES=$(ls dist/*.tar.gz)
 for package in $PACKAGES; do
