@@ -28,5 +28,5 @@ cd $DIR
 if [ -z "$DISPLAY" ] ; then
     export DISPLAY=$(ip route show default | head -1 | awk '{print $3}'):0
 fi
-( cd /opt/mpf ; exec python mpf.py "$@" $GAME )
+( cd /vagrant ; exec python -m pin "$@" )
 
