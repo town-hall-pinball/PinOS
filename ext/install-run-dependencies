@@ -53,6 +53,7 @@ pip install \
     nose \
     paver \
     Sphinx \
+    sphinx_rtd_theme \
     ws4py
 
 PACKAGES=$(ls dist/*.tar.gz)
