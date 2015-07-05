@@ -34,16 +34,17 @@ apt-get update
 
 apt-get install -y \
     alsa-utils \
-	curl \
-	dos2unix \
-	libboost-dev \
-	python \
+    curl \
+    dos2unix \
+    libboost-dev \
+    python \
     python-dev \
-	python-imaging \
+    python-imaging \
     python-pip \
     python-pygame \
     python-yaml \
-    stow
+    stow \
+    timidity
 
 pip install \
     cherrypy \
