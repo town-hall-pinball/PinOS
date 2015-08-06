@@ -40,7 +40,9 @@ apt-get install -y \
 	make \
 	python-dev \
 	python-imaging \
-	python-setuptools \
 	python-yaml \
         stow \
-	swig
+	swig \
+        wget
+
+wget https://bootstrap.pypa.io/ez_setup.py -O - | python
