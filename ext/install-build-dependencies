@@ -45,4 +45,4 @@ apt-get install -y \
 	swig \
         wget
 
-wget https://bootstrap.pypa.io/ez_setup.py -O - | python
+curl https://bootstrap.pypa.io/get-pip.py | python
