@@ -41,8 +41,8 @@ apt-get install -y \
 	python-dev \
 	python-imaging \
 	python-yaml \
-        stow \
+    stow \
 	swig \
-        wget
+    wget
 
 curl https://bootstrap.pypa.io/get-pip.py | python

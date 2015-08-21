@@ -40,11 +40,12 @@ apt-get install -y \
     python \
     python-dev \
     python-imaging \
-    python-pip \
     python-pygame \
     python-yaml \
     stow \
     timidity
+
+curl https://bootstrap.pypa.io/get-pip.py | python
 
 pip install \
     cherrypy \
