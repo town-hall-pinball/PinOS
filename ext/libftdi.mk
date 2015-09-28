@@ -38,6 +38,7 @@ $(DIST)/$(NAME).$(ARCH).tar.gz:
 		cmake -DCMAKE_INSTALL_PREFIX=/ .. ; \
 		make ; \
 		make install DESTDIR=$(BUILDROOT)/$(NAME) )
-	( cd $(BUILDROOT)/$(NAME)/include ; ln -s libftdi/ftdi.h . )
+	( cd $(BUILDROOT)/$(NAME)/include ; ln -s libftdi libftdi1 )
+#( cd $(BUILDROOT)/$(NAME)/include ; ln -s libftdi/ftdi.h . )
 	( cd $(BUILDROOT)/$(NAME)/lib* ; ln -s libftdi.so.1 libftdi1.so )
 	tar czf $(DIST)/$(NAME).$(ARCH).tar.gz -C $(BUILDROOT) $(NAME)

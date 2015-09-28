@@ -27,7 +27,7 @@ NAME=libusb-$(VERSION)
 download: $(DOWNLOAD)/$(NAME).tar.gz
 
 $(DOWNLOAD)/$(NAME).tar.gz:
-	( cd $(DOWNLOAD) ; curl -L -O "http://softlayer-dal.dl.sourceforge.net/project/libusb/libusb-0.1%20%28LEGACY%29/$(VERSION)/$(NAME).tar.gz" )
+	( cd $(DOWNLOAD) ; curl -L -O "http://blackchip.org/town-hall-pinball/libusb-$(VERSION).tar.gz" )
 
 compile: download $(DIST)/$(NAME).$(ARCH).tar.gz
 
